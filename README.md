@@ -1,34 +1,54 @@
-# Creative Ad Director — Hermes skill
+# Creative Ad Director
 
-Shareable bundle containing the complete creative-ad-director skill and its supporting files. No account credentials, conversation exports or personal project files are included.
+An open, MIT-licensed workflow for turning a product, service or experience into an original cinematic advertising concept and production prompt. Created by Mohtab Arabiat with AI assistance.
 
-## Install
+**Ask the right questions → establish the promise and proof → design shots → lock continuity → separate generation and editing → verify the plan.**
 
-Give this ZIP to your Hermes assistant and say:
+## Choose your platform
 
-> Inspect this ZIP and install the creative-ad-director skill into my active Hermes profile. Preserve its templates, references, scripts and assets folders. If a skill with this name already exists, ask before replacing it. Verify it can be loaded.
+### Hermes
+[Download the skill ZIP](https://github.com/mohtab/creative-ad-director/raw/main/creative-ad-director.zip). Give it to your assistant: “Inspect and install this skill into my active Hermes profile. Ask before replacing an existing version. Verify you can load creative-ad-director.” Preserve the complete folder structure.
 
-The skill folder must retain SKILL.md at its root. Do not install into another profile unintentionally.
+### Claude
+Use the same [skill ZIP](https://github.com/mohtab/creative-ad-director/raw/main/creative-ad-director.zip). Where Skills are enabled, enable code execution/file creation, then open Customize → Skills → + Create skill → Upload a skill. Upload the ZIP and enable it. Workspace policies can restrict this. If unavailable, use the plain-text edition below.
 
-## Start creating
+### ChatGPT
+1. Create a ChatGPT Project.
+2. Add [CREATIVE-AD-DIRECTOR.txt](editions/CREATIVE-AD-DIRECTOR.txt) as a reference file (or paste its contents as a source).
+3. Copy [PROJECT-INSTRUCTIONS.txt](editions/PROJECT-INSTRUCTIONS.txt) into the project's instructions.
+4. Start with [STARTER-PROMPT.txt](editions/STARTER-PROMPT.txt).
+5. For automated timing checks, also provide scripts/validate_timeline.py and your timing JSON to a Python-capable session, or run them locally. The plain-text edition does not include executable Python.
 
-> Use creative-ad-director to create an advertisement for [product/service/experience]. Ask only the essential unanswered questions, then deliver a concept, detailed production prompt and separate editing instructions. My video platform is [Higgsfield/Runway/other].
+This is a Project/reference workflow, not a claim that ChatGPT installs native skill ZIPs.
 
-## Contents
+### Any other assistant
+Paste or attach [the self-contained text edition](editions/CREATIVE-AD-DIRECTOR.txt), then the starter prompt. Browsing, file inspection and code execution depend on the host. Without a tool, the assistant must disclose that the corresponding check was not run.
 
-- SKILL.md: creative workflow and verification requirements.
-- templates/master-prompt.md: production package template.
-- references/design-and-model-notes.md: creative lessons and dated platform notes.
-- scripts/validate_timeline.py: Python 3 standard-library timeline validator.
-- assets/stillwater-timeline.json: fictional example timing manifest; not footage or a complete campaign asset pack.
+## What you get
+A brief, recommended creative route, campaign hook/proof/payoff/CTA, shot sequence, continuity rules, generation settings with uncertainty disclosed, and separate voiceover/music/branding/editing instructions. The skill does not generate footage itself or supply credits, music rights or reference images.
 
-## Optional checks
+## Source and downloads
+- [SKILL.md](SKILL.md): canonical workflow.
+- [Master template](templates/master-prompt.md).
+- [Production notes](references/design-and-model-notes.md).
+- [Original fictional example](examples/desk-organizer.md).
+- [All-platform bundle](https://github.com/mohtab/creative-ad-director/raw/main/creative-ad-director-all-platforms.zip).
+- [License](LICENSE) and [rights boundaries](NOTICE.md).
 
-From inside the installed creative-ad-director directory:
+From the repository root:
 
-    python3 scripts/validate_timeline.py --self-test
-    python3 scripts/validate_timeline.py assets/stillwater-timeline.json
+```sh
+python3 scripts/validate_timeline.py --self-test
+python3 scripts/validate_timeline.py assets/example-timeline.json
+python3 tools/package.py
+```
 
-The validator checks edit-plan arithmetic, not rendered video or spoken performance. Voiceover pacing warnings need a spoken check.
+No Python dependencies are required. Timing checks validate an edit plan, not generated footage, voice performance or advertising effectiveness. Platform/model limits must be rechecked; identical output across assistants is not promised.
 
-This skill creates concepts and prompts. It does not include video-generation access, credits, licensed music or reference images. Check current official platform documentation before relying on the dated capability notes. Rendering, spending credits and publishing require separate authorization.
+## Verification scope
+Packaging, self-contained text generation, archive integrity and validator tests are checked locally. Installation guidance follows official documentation; this release has not been account-tested inside ChatGPT or Claude. Test your first prompt after installation.
+
+## Contribute
+Open an issue or pull request for clearer instructions, examples or validator fixes. Do not submit credentials, client confidential material or assets you lack permission to share. Keep the workflow platform-neutral; do not add unsupported platform promises. Retain the license notice when redistributing.
+
+Official setup references: [Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude) · [ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt).

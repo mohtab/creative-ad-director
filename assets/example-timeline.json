@@ -1,0 +1,27 @@
+{
+  "provenance": "Original fictional desk-organizer edit-plan example. No product claims or rendered footage.",
+  "duration_seconds": "12",
+  "fps": 24,
+  "shots": [
+    {
+      "id": 1,
+      "start": "0",
+      "end": "3"
+    },
+    {
+      "id": 2,
+      "start": "3",
+      "end": "6"
+    },
+    {
+      "id": 3,
+      "start": "6",
+      "end": "9"
+    },
+    {
+      "id": 4,
+      "start": "9",
+      "end": "12"
+    }
+  ]
+}
